@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'flats#index'
+  root 'welcome#index'
 
   resources :flats do
     resources :pics, only: [:new, :create, :destroy]
