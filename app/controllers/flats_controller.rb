@@ -1,10 +1,12 @@
 class FlatsController < ApplicationController
+
+  before_filter :set_flat, :only => [:show, :edit, :update, :destroy]
+
   def index
     @flats = Flat.all
   end
 
   def show
-    @flat = Flat.find(params[:id])
   end
 
   def new
@@ -21,7 +23,6 @@ class FlatsController < ApplicationController
   end
 
   def edit
-    @flat = Flat.find(params[:id])
   end
 
   def update
@@ -46,4 +47,5 @@ class FlatsController < ApplicationController
   def flat_params
     params.require(:flat).permit(:address, :description, :surface, :beds, :price)
   end
+
 end
