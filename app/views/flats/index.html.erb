@@ -1,0 +1,11 @@
+<h1>Find a place to stay</h1>
+<ul>
+<% @flats.each do |flat|%>
+
+<p><%= flat.description%>          <%= link_to 'Show', flat_path(flat) %>
+<% end %>
+</p>
+
+<p><strong>Ajoutez un nouveau flat:       <%= link_to 'Create', new_flat_path %></strong></p>
+
+</ul>
