@@ -1,7 +1,25 @@
 Rails.application.routes.draw do
 
+  root 'flats#index'
 
-  root 'welcome#index'
+  resources :flats do
+    resources :pics, only: [:new, :create, :destroy]
+  end
+
+  # get 'flats/index'
+
+  # get 'flats/show'
+
+  # get 'flats/new'
+
+  # get 'flats/create'
+
+  # get 'flats/edit'
+
+  # get 'flats/update'
+
+  # get 'flats/destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
