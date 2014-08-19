@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="header">
-    <h2>Let's edit the flat!</h2>
+    <h2>Let's add some pictures the flat!</h2>
     <h6> <%= link_to "Get back to flats' list", flats_path, class: "link"%></h6>
   </div>
   <div id="pictures-container">
@@ -12,8 +12,8 @@
       <div class="col-xs-6 container-flat center-block">
         <%= form_for [@flat, @flat.pics.new], html: { multipart: true }, :remote => true do |f| %>
             <%= f.label :name %>
-            <%= f.text_field :name, class: "form-control", placeholder: "Bedroom1" %>
-            <%= f.file_field :picture, class: "upload"%>
+            <%= f.text_field :name, class: "form-control", placeholder: "Bedroom1" %> <br>
+            <%= f.file_field :picture, class: "fileupload upload btn" %> <br>
         <% end %>
         <%= link_to "Finish!", flat_path(@flat), class: "btn", id: "finish"%>
       </div>

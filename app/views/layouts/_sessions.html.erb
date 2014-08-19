@@ -1,8 +1,11 @@
 <% if user_signed_in? %>
 
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
+  <li><%= link_to 'My profile', account_path %></li>
+  <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+
 <% else %>
-  <%= link_to 'Sign up', new_user_registration_path %><br>
-  <%= link_to 'Sign in', new_user_session_path %><br>
+  <li><%= link_to 'Sign up', new_user_registration_path, class: "link" %></li>
+  <li><%= link_to 'Sign in', new_user_session_path, class: "link" %></li>
+
 <% end %>
-<%= link_to 'My profile', account_path %>
+

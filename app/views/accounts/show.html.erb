@@ -1,15 +1,59 @@
+<div class="container">
 
-<BR>
-<h1>Your profile !</h1>
+  <div class="header">
+    <h2>Your profile !</h2>
+    <h6>All we know about you is ...:  </h6>
+  </div>
 
-<p>
-  <strong>All we know about you is ... :  </strong>
-  <p><strong>Name: </strong> <%=current_user.first_name%>  <%=current_user.last_name%></p>
-  <p><strong>E-Mail: </strong> <%=current_user.email%></p>
-  <p><strong>Address: </strong> <%=current_user.address%></p>
-  <p><strong>City: </strong> <%=current_user.city%></p>
-  <p><strong>Phone: </strong> <%=current_user.phone%></p>
-</p>
-<br>
-<%= link_to 'Add a flat', new_flat_path %>
-<%= link_to 'Edit your profile', edit_account_path %><br><br>
+  <div class="container-account center-block well col-xs-6">
+
+      <p class="text-right"><%= link_to 'Wanna edit your profile ?', edit_account_path, class: "link" %></p>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Name:</div>
+          <div class="panel-body">
+            <%=current_user.first_name%>  <%=current_user.last_name%>
+          </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Mail:</div>
+          <div class="panel-body">
+            <%=current_user.email%>
+          </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">City:</div>
+          <div class="panel-body">
+            <%=current_user.city%>
+          </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Phone:</div>
+          <div class="panel-body">
+            <%=current_user.phone%>
+          </div>
+      </div>
+
+  </div>
+
+  <div class="container-account center-block well col-xs-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Flat(s): </div>
+          <div class="panel-body">
+            <%current_user.flats.each do |flat|%>
+             <p> <%= link_to flat.title, flat_path(flat), class: "link" %> </p>
+            <% end %>
+          </div>
+      </div>
+
+       <p class="text-right"><%= link_to 'Wanna add a flat?', new_flat_path, class: "link" %></p>
+
+  </div>
+
+  <div class="spacer"></div>
+
+</div>
