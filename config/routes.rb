@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :flats do
-    resources :pics, only: [:new, :create, :destroy]
+    resources :pics, only: [:new, :create]
   end
+
+  resources :pics, only: [ :destroy ]
+
 
   # get 'flats/index'
 
