@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'welcome#index'
 
   resources :flats do
     resources :pics, only: [:new, :create, :destroy]
   end
+  resource :account, only: [:show, :edit, :update]
 
   # get 'flats/index'
 
