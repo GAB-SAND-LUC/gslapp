@@ -14,7 +14,7 @@ class FlatsController < ApplicationController
   end
 
   def create
-    @flat = Flat.new(flat_params)
+    @flat = current_user.flats.new(flat_params)
     if @flat.save
       redirect_to new_flat_pic_path(@flat)
     else
