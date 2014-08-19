@@ -47,7 +47,6 @@ footer {
 .header h2 {
   padding-top: 80px;
   font-size: 80px;
-  font-style: bold;
 }
 
 .header h6 {
@@ -65,5 +64,9 @@ footer {
 
 h4 {
   color: #ff5a5f;
+}
+
+.spacer {
+  height: 15em;
 }
 

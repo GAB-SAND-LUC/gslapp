@@ -27,7 +27,7 @@ class FlatsController < ApplicationController
 
   def update
     if @flat.update(flat_params)
-      redirect_to flats_path
+      redirect_to flat_path(@flat)
     else
       render action: 'edit'
     end
