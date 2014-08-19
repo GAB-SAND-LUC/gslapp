@@ -5,25 +5,7 @@
     <h6> <%= link_to "Get back to flats' list", flats_path, class: "link"%></h6>
   </div>
 
-<div class="col-xs-3 col-sm-3 col-md-3 col-md-3"></div>
-<div class="col-xs-6 col-sm-6 col-md-6 col-md-6 container-flat center-block">
-  <%= form_for @flat, html: {role:"form"} do |f| %>
-    <%= f.label :description %>
-    <%= f.text_area :description, class: "form-control", rows: "7" %> <br>
-    <%= f.label :address %>
-    <%= f.text_area :address, class: "form-control", placeholder: "10 rue Parmentier, 75011"%> <br>
-    <%= f.label :surface %>
-    <%= f.text_area :surface, class: "form-control", placeholder: "55m2" %> <br>
-    <%= f.label :beds %>
-    <%= f.text_area :beds, class: "form-control", placeholder: "2" %> <br>
-    <%= f.label :price %>
-    <%= f.text_area :price, class: "form-control", placeholder: "70€/night"%> <br>
-    <%= f.label :pictures %>
-    <%= f.file_field :pictures, class: "form-control"%>
-<br>
-    <%= f.submit :class => "btn"%>
-  <% end %>
-</div>
+  <%= render "form"%>
 
   <div class="spacer"></div>
 
