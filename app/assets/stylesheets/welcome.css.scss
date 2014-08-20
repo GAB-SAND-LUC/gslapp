@@ -17,19 +17,23 @@ body {
 }
 
 .container h1 {
-  padding-top: 200px;
+  padding-top: 150px;
   font-size: 100px;
   color: white;
   text-shadow: 0 0 20px rgba(0, 0, 0, .8);
 }
 
 .btn {
-  background: #AAA;
-  color: black;
-  border: none;
+  border-color: #ff5a5f;
+  border-bottom-color: #e00007;
+  background-color: #ff5a5f;
+  color: #fff;
   display: inline-block;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
-
 
 .container {
   color: black;

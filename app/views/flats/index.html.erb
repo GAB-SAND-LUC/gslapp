@@ -1,11 +1,20 @@
-<h1>Find a place to stay</h1>
-<ul>
-<% @flats.each do |flat|%>
+<div class="container">
 
-<p><%= flat.description%>          <%= link_to 'Show', flat_path(flat) %>
-<% end %>
-</p>
+  <div class="header">
+    <h2>FIND A PLACE TO STAY</h2>
+    <h6>Wanna add a new flat to the list?       <%= link_to 'Click here!', new_flat_path, class: 'link' %></h6>
+  </div>
 
-<p><strong>Ajoutez un nouveau flat:       <%= link_to 'Create', new_flat_path %></strong></p>
+  <div class="container-flat center-block well">
 
-</ul>
+  <ul>
+  <% @flats.each do |flat|%>
+    <ol><%= link_to flat.description, flat_path(flat), class: "link" %>, <%= flat.address%>, <%= flat.price %>€/night</ol>
+  <% end %>
+  </ul>
+
+  </div>
+
+  <div class="spacer"></div>
+
+</div>

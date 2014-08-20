@@ -1,6 +1,27 @@
-<h1><%=@flat.description%></h1>
+<div class="container">
 
-<h4>Address:</h4><%=@flat.address%>
-<h4>Surface:</h4><%=@flat.surface%>
-<h4>Price:</h4><%=@flat.price%>
-<h4>Beds:</h4><%=@flat.beds%>
+  <div class="header">
+    <h2><%=@flat.title%></h2>
+    <h6> <%= link_to "Get back to flats' list", flats_path, class: "link"%></h6>
+  </div>
+
+  <div class="container-flat center-block well">
+
+    <% if @flat.pics.size > 0 %>
+      <h4>Pic:</h4><%= image_tag @flat.pics.first.picture.url(:thumb) %>
+    <% end %>
+    <h4>Description:</h4><%=@flat.description%>
+    <h4>Address:</h4><%=@flat.address%>
+    <h4>Surface:</h4><%=@flat.surface%>
+    <h4>Price:</h4><%=@flat.price%>€/night
+    <h4>Beds:</h4><%=@flat.beds%>
+    <h4>Landlord:</h4><%=@flat.user.email%>
+
+    <div class="row edit text-right"><%= link_to "Let's update this flat", edit_flat_path(@flat), class: "link" %> </div>
+    <div class="row edit text-right link"><%= link_to "Let's delete this flat", @flat, method: :delete, class: "link" %> </div>
+
+  </div>
+
+  <div class="spacer"></div>
+
+</div>

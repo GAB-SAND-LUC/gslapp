@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: e8c1dc8a26183cf10e5eac7fb29eb7bdcf51d01f
+  specs:
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -31,6 +41,7 @@ GEM
     aws-sdk (1.51.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
+    bcrypt (3.1.7)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -53,6 +64,12 @@ GEM
     coffee-script-source (1.7.1)
     daemons (1.1.9)
     debug_inspector (0.0.2)
+    devise (3.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.1)
@@ -78,6 +95,7 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
+    orm_adapter (0.5.0)
     paperclip (4.2.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -112,6 +130,7 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     ref (1.0.5)
+    remotipart (1.2.1)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -151,6 +170,8 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -161,13 +182,15 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  devise
   figaro
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip
+  paperclip!
   pg
   rails (= 4.1.4)
   rails_12factor
+  remotipart (~> 1.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

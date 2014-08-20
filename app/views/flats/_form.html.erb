@@ -1,0 +1,18 @@
+<div class="col-xs-3"></div>
+<div class="col-xs-6 container-flat center-block well">
+  <%= form_for @flat, html: {role:"form"} do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %> <br>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control", rows: "7" %> <br>
+    <%= f.label :address %>
+    <%= f.text_area :address, class: "form-control", placeholder: "10 rue Parmentier, 75011"%> <br>
+    <%= f.label :surface %>
+    <%= f.text_area :surface, class: "form-control", placeholder: "55m2" %> <br>
+    <%= f.label :beds %>
+    <%= f.text_area :beds, class: "form-control", placeholder: "2" %> <br>
+    <%= f.label :price %>
+    <%= f.text_area :price, class: "form-control", placeholder: "70€/night"%> <br>
+    <%= f.submit "Next", :class => "btn"%>
+  <% end %>
+</div>

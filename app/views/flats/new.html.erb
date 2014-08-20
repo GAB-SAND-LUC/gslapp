@@ -1,2 +1,12 @@
-<h1>Flats#new</h1>
-<p>Find me in app/views/flats/new.html.erb</p>
+<div class="container">
+
+  <div class="header">
+    <h2>Add a new flat</h2>
+    <h6> <%= link_to "Get back to flats' list", flats_path, class: "link"%></h6>
+  </div>
+
+  <%= render "form"%>
+
+  <div class="spacer"></div>
+
+</div>

@@ -15,6 +15,10 @@
  *= require_self
  */
 
+body {
+  color: #BBB;
+}
+
 nav {
   color: white;
 }
@@ -39,3 +43,31 @@ footer {
   background: black;
   color: white;
 }
+
+.header h2 {
+  padding-top: 80px;
+  font-size: 80px;
+}
+
+.header h6 {
+  padding-top: 0.5em;
+  font-size: 20px;
+}
+
+.link {
+  color: #ff5a5f;
+}
+
+.link:hover {
+  color: #ff5a5e;
+}
+
+h4 {
+  color: #ff5a5f;
+}
+
+.spacer {
+  height: 25em;
+}
+
+

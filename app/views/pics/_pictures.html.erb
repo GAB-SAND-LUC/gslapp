@@ -1,0 +1,10 @@
+<div class="row">
+    <% @flat.pics.each do |pic| %>
+      <div class="col-xs-3">
+        <fieldset>
+          <%= image_tag pic.picture.url(:thumb) %>
+          <%= link_to "Delete", pic_path(pic), class: 'delete-picture link', method: :delete, remote: true %>
+        </fieldset>
+      </div>
+    <% end %>
+</div>
