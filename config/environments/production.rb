@@ -1,5 +1,18 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: 'gslapp.herokuapp.comm' }
+
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.gmail.com',
+  #   port:                 465,
+  #   domain:               'http://gslapp.herokuapp.com/',
+  #   user_name:            'toto',
+  #   password:             'MY SECURE PASSWORD',
+  #   authentication:       :plain,
+  #   ssl:                  true
+  # }
+
+  config.action_mailer.default_url_options = { host: 'http://gslapp.herokuapp.com/' }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
