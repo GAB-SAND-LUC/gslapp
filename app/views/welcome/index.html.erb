@@ -5,7 +5,12 @@
 
     <h1>WELCOME HOME</h1>
 
-    <%= link_to "Enter", flats_path, class: "btn btn-lg", id: "welcome" %>
+      <div class="col-xs-2"></div>
+        <div class="col-xs-8 form-search">
+          <p>Where do you wanna go?</p>
+          <%= render 'form' %>
+        </div>
+
 
   </div>
 

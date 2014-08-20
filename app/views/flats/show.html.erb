@@ -7,18 +7,27 @@
 
   <div class="container-flat center-block well">
 
+    <% if user_signed_in? && current_user.email == @flat.user.email %>
+      <div class="row edit text-right"><%= link_to "Wanna update this flat?", edit_flat_path(@flat), class: "link" %> </div>
+      <div class="row edit text-right link"><%= link_to "Wanna delete this flat?", @flat, method: :delete, class: "link" %> </div>
+    <% end %>
+
+
     <% if @flat.pics.size > 0 %>
-      <h4>Pic:</h4><%= image_tag @flat.pics.first.picture.url(:thumb) %>
+      <h4>Pic:</h4><% @flat.pics.each do |pic| %>
+        <fieldset id="picture">
+          <%= image_tag pic.picture.url(:thumb) %>
+        </fieldset>
+      <% end %>
     <% end %>
     <h4>Description:</h4><%=@flat.description%>
     <h4>Address:</h4><%=@flat.address%>
-    <h4>Surface:</h4><%=@flat.surface%>
-    <h4>Price:</h4><%=@flat.price%>€/night
+    <h4>City:</h4><%=@flat.city%>
+    <h4>Zip Code:</h4><%=@flat.zip_code%>
+    <h4>Surface(m2):</h4><%=@flat.surface%>
+    <h4>Price(€/night):</h4><%=@flat.price%>
     <h4>Beds:</h4><%=@flat.beds%>
-    <h4>Landlord:</h4><%=@flat.user.email%>
-
-    <div class="row edit text-right"><%= link_to "Let's update this flat", edit_flat_path(@flat), class: "link" %> </div>
-    <div class="row edit text-right link"><%= link_to "Let's delete this flat", @flat, method: :delete, class: "link" %> </div>
+    <h4>Contact the landlord:</h4><%=@flat.user.email%>
 
   </div>
 
