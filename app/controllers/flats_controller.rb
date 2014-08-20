@@ -1,6 +1,7 @@
 class FlatsController < ApplicationController
 
   before_filter :set_flat, :only => [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
     @flats = Flat.all
