@@ -47,7 +47,11 @@
         <div class="panel-heading">Flat(s): </div>
           <div class="panel-body">
             <%current_user.flats.each do |flat|%>
-             <p> <%= link_to flat.title, flat_path(flat), class: "link" %> </p>
+             <div class= "flat_list">
+                  <p><%= link_to flat.title, flat_path(flat), class: "link text-left" %>
+                  <%= link_to "  Edit", edit_flat_path(flat), class: "edition" %>
+                  <%= link_to "  Delete", flat, method: :delete, class: "edition" %></p>
+            </div>
             <% end %>
           </div>
       </div>
