@@ -7,6 +7,13 @@
 
   <div class="container-flat center-block well">
 
+  <% if @flats == [] %>
+    <div class="text-center">
+      <p>There is no flat matching to your search, try again!</p>
+      <%= render 'welcome/form' %>
+    </div>
+  <% end %>
+
   <ul>
   <% @flats.each do |flat|%>
     <ol><%= link_to flat.description, flat_path(flat), class: "link" %>, <%= flat.address%>, <%= flat.price %>€/night</ol>

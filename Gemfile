@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.0.0'
@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.1.4'
 gem 'rails_12factor'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 gem 'remotipart', '~> 1.2'
 gem 'sass-rails', '~> 4.0.3'
 gem 'therubyracer',  platforms: :ruby
