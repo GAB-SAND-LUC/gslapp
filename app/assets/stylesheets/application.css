@@ -15,6 +15,19 @@
  *= require_self
  */
 
+.carousel_container {
+  height : 300px;
+  width : 300px;
+  margin :auto;
+
+
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
 body {
   color: #BBB;
 }
@@ -50,7 +63,7 @@ footer {
 
 .header h2 {
   padding-top: 80px;
-  font-size: 80px;
+  font-size: 60px;
 }
 
 .header h6 {
@@ -71,6 +84,17 @@ h4 {
 }
 
 .spacer {
+  height: 20em;
+}
+.flat_list {
+  display:inline;
+}
+
+.edition {
+  color : black;
+  font-size: 15px;
+  position: text-right;
+  text-decoration: underline;
   height: 30px;
 }
 

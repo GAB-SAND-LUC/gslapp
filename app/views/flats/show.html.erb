@@ -7,30 +7,54 @@
 
   <div class="container-flat center-block well">
 
-    <% if user_signed_in? && current_user.email == @flat.user.email %>
-      <div class="row edit text-right"><%= link_to "Wanna update this flat?", edit_flat_path(@flat), class: "link" %> </div>
-      <div class="row edit text-right link"><%= link_to "Wanna delete this flat?", @flat, method: :delete, class: "link" %> </div>
-    <% end %>
-
 
     <% if @flat.pics.size > 0 %>
-      <h4>Pic:</h4><% @flat.pics.each do |pic| %>
-        <fieldset id="picture">
-          <%= image_tag pic.picture.url(:thumb) %>
-        </fieldset>
-      <% end %>
-    <% end %>
-    <h4>Description:</h4><%=@flat.description%>
-    <h4>Address:</h4><%=@flat.address%>
-    <h4>City:</h4><%=@flat.city%>
-    <h4>Zip Code:</h4><%=@flat.zip_code%>
-    <h4>Surface(m2):</h4><%=@flat.surface%>
-    <h4>Price(€/night):</h4><%=@flat.price%>
-    <h4>Beds:</h4><%=@flat.beds%>
-    <h4>Contact the landlord:</h4><%=@flat.user.email%>
+    <div class="carousel_container">
+      <div class="carousel">
+        <h4>Pic:</h4><% @flat.pics.each do |pic| %>
 
+            <div><%= image_tag pic.picture.url(:medium) %></div>
+
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+<div class="wrapper_gold">
+  <div class="col-sm-6 col-md-4">
+    <div class="feature">
+      <div class="feature-picture">
+          <%= image_tag 'icon_45188.png', width: 75 %>
+      </div>
+    <h4>Description:</h4><%=@flat.description%>
+    <h4>Address:</h4><%=@flat.address%> <%=@flat.zip_code%> <%=@flat.city%>
+
+
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="feature">
+      <div class="feature-picture">
+        <%= image_tag 'icon_56104.png', width: 75 %>
+      </div>
+    <h4>Surface(m2):</h4><%=@flat.surface%>
+
+    <h4>Beds:</h4><%=@flat.beds%>
+    </div>
+      </div>
+    <div class="col-sm-6 col-md-4">
+    <div class="feature">
+      <div class="feature-picture">
+        <%= image_tag 'icon_22990.png', width: 75 %>
+    <h4>Contact the landlord:</h4><%=@flat.user.email%>
+    <h4>Price(€/night):</h4><%=@flat.price%>
+  </div>
+</div>
   </div>
 
-  <div class="spacer"></div>
 
+<div class="spacer"></div>
+<% if user_signed_in? && current_user.email == @flat.user.email %>
+      <div class="row edit text-right"><%= link_to "update", edit_flat_path(@flat), class: "link" %> <%= link_to "delete", @flat, method: :delete, class: "link" %> </div>
+    <% end %>
+</div>
 </div>
