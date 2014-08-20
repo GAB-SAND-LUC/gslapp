@@ -15,6 +15,19 @@
  *= require_self
  */
 
+.carousel_container {
+  height : 300px;
+  width : 300px;
+  margin :auto;
+
+
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
 body {
   color: #BBB;
 }

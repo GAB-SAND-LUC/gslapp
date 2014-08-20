@@ -14,11 +14,15 @@
 
 
     <% if @flat.pics.size > 0 %>
-      <h4>Pic:</h4><% @flat.pics.each do |pic| %>
-        <fieldset id="picture">
-          <%= image_tag pic.picture.url(:thumb) %>
-        </fieldset>
-      <% end %>
+    <div class="carousel_container">
+      <div class="carousel">
+        <h4>Pic:</h4><% @flat.pics.each do |pic| %>
+
+            <div><%= image_tag pic.picture.url(:medium) %></div>
+
+        <% end %>
+        </div>
+      </div>
     <% end %>
     <h4>Description:</h4><%=@flat.description%>
     <h4>Address:</h4><%=@flat.address%>
