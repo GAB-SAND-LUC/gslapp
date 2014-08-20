@@ -4,7 +4,8 @@ class FlatsController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
-    @flats = Flat.all
+    @q = Flat.search(params[:q])
+    @flats = @q.result(distinct: true)
   end
 
   def show

@@ -1,4 +1,16 @@
 GIT
+  remote: git://github.com/activerecord-hackery/ransack.git
+  revision: 5a3458a598140f7d6cd53b459d28a7c7c56bf633
+  branch: rails-4.1
+  specs:
+    ransack (1.2.4)
+      actionpack (>= 4.0)
+      activerecord (>= 4.0)
+      activesupport (>= 4.0)
+      i18n
+      polyamorous (~> 1.1)
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: e8c1dc8a26183cf10e5eac7fb29eb7bdcf51d01f
   specs:
@@ -96,12 +108,9 @@ GEM
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
-    paperclip (4.2.0)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
-      mime-types
     pg (0.17.1)
+    polyamorous (1.1.0)
+      activerecord (>= 3.0)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -190,6 +199,7 @@ DEPENDENCIES
   pg
   rails (= 4.1.4)
   rails_12factor
+  ransack!
   remotipart (~> 1.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

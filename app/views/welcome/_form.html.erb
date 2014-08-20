@@ -1,0 +1,5 @@
+<%= search_form_for @q, html: {class: "form-inline", role:"form"} do |f|%>
+  <%= f.label :city_matches, "City" %>
+  <%= f.search_field :city_matches, class: "form-control" %>
+  <%= f.submit "Go!", class: "btn" %>
+<% end %>
