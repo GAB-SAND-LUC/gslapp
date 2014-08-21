@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+
   root 'welcome#index'
 
   resources :flats do
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resource :account, only: [:show, :edit, :update]
 
   resources :pics, only: [ :destroy ]
+
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
 
 
   # get 'flats/index'

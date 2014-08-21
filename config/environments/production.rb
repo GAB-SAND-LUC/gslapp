@@ -33,6 +33,21 @@ Rails.application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
+  config.app_domain = 'http://gslapp.herokuapp.com/'
+   config.action_mailer.delivery_method = :smtp
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.default_url_options = { host: config.app_domain }
+    config.action_mailer.smtp_settings = {
+    address: 'smtp.mandrillapp.com',
+    port: '465',
+    enable_starttls_auto: true,
+    user_name: ENV['MANDRILL_USERNAME'],
+    password: ENV['MANDRILL_APIKEY'],
+    authentication: :plain,
+    domain: 'heroku.com'
+    ssl: true
+  }
+
   # `config.assets.precompile` has moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.

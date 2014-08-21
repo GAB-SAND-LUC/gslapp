@@ -22,6 +22,10 @@ gem 'therubyracer',  platforms: :ruby
 gem 'thin'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+#Using mailcatcher... do not add it into your gemfile, it may create conflicts.
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
