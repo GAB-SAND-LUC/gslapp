@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div class="header">
+    <h2>Let's make a reservation!</h2>
+    <h6> <%= link_to "Get back to flats' list", flats_path, class: "link"%></h6>
+  </div>
+
+    <div class="col-xs-3" ></div>
+    <div class="col-xs-6 container-flat center-block well">
+      <%= form_for [@flat, @flat.resas.build], html: {role:"form"} do |f| %>
+        <%= f.label :message %>
+        <%= f.text_area :message, class: "form-control", rows: "7" %> <br>
+        <%= f.label :checkin %>
+        <%= f.date_field :checkin, class: "form-control" %> <br>
+        <%= f.label :checkout %>
+        <%= f.date_field :checkout, class: "form-control" %> <br>
+        <%= f.hidden_field :flat_id, value: params[:flat_id] %>
+        <%= f.submit "Send reservation!", :class => "btn"%>
+      <% end %>
+    </div>
+
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140820155507) do
+ActiveRecord::Schema.define(version: 20140821155640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,20 @@ ActiveRecord::Schema.define(version: 20140820155507) do
   end
 
   add_index "pics", ["flat_id"], name: "index_pics_on_flat_id", using: :btree
+
+  create_table "resas", force: true do |t|
+    t.text     "message"
+    t.date     "checkin"
+    t.date     "checkout"
+    t.integer  "flat_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "state"
+  end
+
+  add_index "resas", ["flat_id"], name: "index_resas_on_flat_id", using: :btree
+  add_index "resas", ["user_id"], name: "index_resas_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
