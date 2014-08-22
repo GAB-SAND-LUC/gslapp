@@ -1,15 +1,16 @@
 Rails.application.configure do
 
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   address:              'smtp.gmail.com',
-  #   port:                 465,
-  #   domain:               'http://gslapp.herokuapp.com/',
-  #   user_name:            'toto',
-  #   password:             'MY SECURE PASSWORD',
-  #   authentication:       :plain,
-  #   ssl:                  true
-  # }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:        'smtp.mandrillapp.com',
+    port:           465,
+    user_name:      ENV['MANDRILL_USERNAME'],
+    password:       ENV['MANDRILL_APIKEY'],
+    domain:         "gslapp.herokuapp.com",
+    authentication: :plain,
+    ssl:            true
+  }
 
   config.action_mailer.default_url_options = { host: 'http://gslapp.herokuapp.com/' }
 
