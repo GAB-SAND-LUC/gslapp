@@ -8,6 +8,11 @@ class ResasController < ApplicationController
   def create
     @user = current_user
     @resa = @user.resas.create(resa_params)
+    UserMailer.sending_resa(@user).deliver
+    flat = Flat.find(@resa.flat_id)
+    @landlord = flat.user
+    @landlord = @resa.landlord
+    UserMailer.receiving_resa(@landlord, @resa).deliver
     redirect_to account_path
   end
 
