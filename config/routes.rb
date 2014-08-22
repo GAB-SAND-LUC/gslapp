@@ -5,11 +5,16 @@ Rails.application.routes.draw do
 
   resources :flats do
     resources :pics, only: [:new, :create]
+    resources :resas, only: [:new, :create]
   end
   resource :account, only: [:show, :edit, :update]
 
   resources :pics, only: [ :destroy ]
 
+  resources :resas do
+    patch :accept, on: :member
+    patch :reject, on: :member
+  end
 
   # get 'flats/index'
 

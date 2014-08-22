@@ -39,6 +39,7 @@
 
   </div>
 
+
   <div class="container-account center-block well col-xs-6">
 
       <p class="text-right"><%= link_to 'Wanna add a flat?', new_flat_path, class: "link" %></p>
@@ -51,14 +52,36 @@
                   <p><%= link_to flat.title, flat_path(flat), class: "link text-left" %>
                   <%= link_to "  Edit", edit_flat_path(flat), class: "edition" %>
                   <%= link_to "  Delete", flat, method: :delete, class: "edition" %></p>
+                  <p><% flat.resas.each do |resa| %>
+                    <%= link_to "You received a request from " + resa.user.email + "!", resa_path(resa), class: "edition" %></p>
+                  <% end %>
             </div>
             <% end %>
           </div>
       </div>
 
-
-
   </div>
+
+
+
+  <div class="container-account center-block well col-xs-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Resa(s): </div>
+          <div class="panel-body">
+            <%current_user.resas.each do |resa|%>
+             <div class= "flat_list">
+                  <p><%= link_to resa.flat.title, flat_path(resa.flat), class: "link" %></p>
+                  <ul>
+                    <li> From <%= resa.checkin %> to  <%= resa.checkout %></li>
+                    <li> Status: <%= resa.state %></li>
+                  </ul>
+            </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+
 
   <div class="spacer"></div>
 

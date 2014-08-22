@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="header">
+    <h2>Here is the reservation's details!</h2>
+    <h6> <%= link_to "Get back to profile", account_path, class: "link"%></h6>
+  </div>
+
+    <div class="col-xs-3" ></div>
+    <div class="col-xs-6 container-flat center-block well">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">From:</div>
+          <div class="panel-body">
+            <%= @resa.user.email %>
+          </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Period:</div>
+          <div class="panel-body">
+            From <%= @resa.checkin %> to <%= @resa.checkout %>
+          </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Message:</div>
+          <div class="panel-body">
+            <%= @resa.message %>
+          </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Status:</div>
+          <div class="panel-body">
+            <%= @resa.state  %>
+          </div>
+      </div>
+
+      <p class="text-center"><%= link_to "Accept", accept_resa_path, method: :patch, class: "link" %> / <%= link_to "Refuse", reject_resa_path, method: :patch, class: "link" %></p>
+
+</div>
