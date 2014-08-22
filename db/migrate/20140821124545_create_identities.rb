@@ -4,6 +4,8 @@ class CreateIdentities < ActiveRecord::Migration
       t.references :user, index: true
       t.string :provider
       t.string :uid
+      t.string :token
+      t.datetime :token_expiry
 
       t.timestamps
     end

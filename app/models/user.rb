@@ -3,16 +3,13 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
   has_many :flats, dependent: :destroy
   has_many :identities, dependent: :destroy
 
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\A[^@]+@[^@]+\z/
 
-  # Include default devise modules. Others available are:
-  # :lockable, :timeoutable
-  devise :database_authenticatable, :registerable, :confirmable,
-    :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
@@ -40,13 +37,14 @@ class User < ActiveRecord::Base
       # Create the user if it's a new registration
       if user.nil?
         user = User.new(
-          name: auth.extra.raw_info.name,
-          #username: auth.info.nickname || auth.uid,
+          first_name: auth.extra.raw_info.first_name,
+          last_name: auth.extra.raw_info.last_name,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20]
         )
-        user.skip_confirmation!
         user.save!
+        user.identities.create(provider: auth.provider, uid: auth.uid, token: auth.credentials.token, token_expiry: Time.at(auth.credentials.expires_at))
+        dverv
       end
     end
 

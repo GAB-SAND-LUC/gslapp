@@ -9,13 +9,14 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
           set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
         else
           session["devise.#{provider}_data"] = env["omniauth.auth"]
-          redirect_to new_user_registration_url
+          redirect_to account_path
         end
       end
     }
   end
 
-  [:twitter, :facebook, :linked_in].each do |provider|
+
+  [:twitter, :facebook].each do |provider|
     provides_callback_for provider
   end
 
