@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 20140821155640) do
 
   add_index "flats", ["user_id"], name: "index_flats_on_user_id", using: :btree
 
+  create_table "identities", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "token"
+    t.datetime "token_expiry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
   create_table "pics", force: true do |t|
     t.string   "name"
     t.integer  "flat_id"
@@ -81,6 +93,12 @@ ActiveRecord::Schema.define(version: 20140821155640) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "picture"
+    t.string   "name"
+    t.string   "token"
+    t.datetime "token_expiry"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

@@ -23,7 +23,8 @@ gem 'therubyracer',  platforms: :ruby
 gem 'thin'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
-
+gem 'koala'
+gem 'omniauth-facebook'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 
